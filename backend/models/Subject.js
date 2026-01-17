@@ -16,7 +16,7 @@ const contentSchema = new mongoose.Schema(
     // flexible: string | array | object
     description: mongoose.Schema.Types.Mixed,
   },
-  { _id: false }
+  { _id: false },
 );
 
 /* ---------- SUB TOPIC ---------- */
@@ -32,7 +32,7 @@ const subTopicSchema = new mongoose.Schema(
     },
     contents: [contentSchema],
   },
-  { _id: false }
+  { _id: false },
 );
 
 /* ---------- TOPIC ---------- */
@@ -49,7 +49,7 @@ const topicSchema = new mongoose.Schema(
     subTopics: [subTopicSchema],
     contents: [contentSchema], // optional direct content
   },
-  { _id: false }
+  { _id: false },
 );
 
 /* ---------- SUBJECT ---------- */
@@ -67,7 +67,7 @@ const subjectSchema = new mongoose.Schema(
     topics: [topicSchema],
     contents: [contentSchema], // optional subject intro
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("Subject", subjectSchema);

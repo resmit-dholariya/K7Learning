@@ -22,7 +22,7 @@ export const getAllSubjects = async (req, res) => {
 export const createSubject = async (req, res) => {
   try {
     const { name, position } = req.body;
-    if (!title || position === undefined) {
+    if (!name || position === undefined) {
       return res
         .status(400)
         .json({ message: "title and position are required" });
